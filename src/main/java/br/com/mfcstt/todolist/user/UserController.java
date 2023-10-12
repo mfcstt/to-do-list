@@ -1,5 +1,7 @@
 package br.com.mfcstt.todolist.user;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import at.favre.lib.crypto.bcrypt.BCrypt;
 
 @RestController                   // criação da rota
 @RequestMapping("/users")        // estrutura da rota
@@ -32,6 +36,11 @@ public class UserController {
             //status code
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Usuário já existe");
         }
+        //criptografar a senha
+       var passwordHashred = BCrypt.withDefaults()
+       .hashToString(12,userModel.getPassword().toCharArray());
+        //passar a senha
+        userModel.setPassword(passwordHashred);
 
         //retornar quando o usuario for cadastrado
         var userCreated = this.userRepository.save(userModel);
