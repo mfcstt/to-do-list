@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.mfcstt</groupId>
 	<artifactId>to-do-list</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>to-do-list</name>
 	<description>Gerenciador de tarefas</description>
 	<properties>
