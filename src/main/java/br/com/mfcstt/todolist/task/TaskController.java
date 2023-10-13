@@ -18,71 +18,65 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.mfcstt.todolist.utils.utils;
 import jakarta.servlet.http.HttpServletRequest;
 
+@RestController                   // Define que esta classe é um controlador Spring
+@RequestMapping("/tasks")        // Define a estrutura da rota para as operações deste controlador
 
-// configurar rota
-@RestController
-@RequestMapping("/tasks")
 public class TaskController {
 
-    //autogerenciar repositorio
     @Autowired
-    private ITaskRepository taskRepository;
+    private ITaskRepository taskRepository; // Injeção de dependência do repositório de tarefas
 
-    //rota post
-    //criar tarefa
     @PostMapping("/")
-    public ResponseEntity create(@RequestBody TaskModel taskModel, HttpServletRequest request){
-        var idUser = request.getAttribute("idUser");
-        taskModel.setIdUser((UUID)idUser);
+    public ResponseEntity create(@RequestBody TaskModel taskModel, HttpServletRequest request) {
+        // Manipula a criação de uma nova tarefa a partir dos dados no corpo da requisição
 
-        //validação da data
-        var currentDate =LocalDateTime.now();
+        var idUser = request.getAttribute("idUser");
+        taskModel.setIdUser((UUID) idUser); // Define o ID do usuário para a tarefa
+
+        var currentDate = LocalDateTime.now();
         if (currentDate.isAfter(taskModel.getStartAt()) || currentDate.isAfter(taskModel.getEndAt())) {
+            // Verifica se a data de início ou término da tarefa é anterior à data atual
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-            .body("A data de inicio/termino deve ser maior do que a data atual");
+                .body("A data de início/termino deve ser maior do que a data atual");
         }
         if (taskModel.getStartAt().isAfter(taskModel.getEndAt())) {
+            // Verifica se a data de início é posterior à data de término
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-            .body("A data de inicio deve ser menor do que a data de termino");
+                .body("A data de início deve ser menor do que a data de término");
         }
-        var task = this.taskRepository.save(taskModel);
+        
+        var task = this.taskRepository.save(taskModel); // Salva a nova tarefa no banco de dados
         return ResponseEntity.status(HttpStatus.OK).body(task);
     }
 
-    //lista de tarefas
     @GetMapping("/")
-    public List<TaskModel> list(HttpServletRequest request){
+    public List<TaskModel> list(HttpServletRequest request) {
+        // Lista as tarefas associadas ao usuário com base no ID do usuário
+
         var idUser = request.getAttribute("idUser");
-        var tasks = this.taskRepository.findByIdUser((UUID) idUser);
+        var tasks = this.taskRepository.findByIdUser((UUID) idUser); // Busca as tarefas do usuário
         return tasks;
-        
     }
-    
-    //atualizar tarefa
+
     @PutMapping("/{id}")
-    public ResponseEntity update(@RequestBody TaskModel taskModel,HttpServletRequest request, @PathVariable UUID id ){
-        
-        var task = this.taskRepository.findById(id).orElse(null);
+    public ResponseEntity update(@RequestBody TaskModel taskModel, HttpServletRequest request, @PathVariable UUID id) {
+        // Manipula a atualização de uma tarefa existente
 
-        // verificar se a tarefa existe
-        if(task == null){
+        var task = this.taskRepository.findById(id).orElse(null); // Busca a tarefa pelo ID
+
+        if (task == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-            .body("Tarefa não encontrada");
-
+                .body("Tarefa não encontrada");
         }
-        
-        //verificar se a tarefa pertence ao usuário
 
         var idUser = request.getAttribute("idUser");
-        if(!task.getIdUser().equals(idUser)){
-
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Permissão não concedida");   
+        if (!task.getIdUser().equals(idUser)) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Permissão não concedida");
         }
 
-        utils.copyNonNullProperties(taskModel, task);
-        
-        var taskUpdated = this.taskRepository.save(task);
+        utils.copyNonNullProperties(taskModel, task); // Atualiza as propriedades não nulas da tarefa existente
+
+        var taskUpdated = this.taskRepository.save(task); // Salva a tarefa atualizada no banco de dados
         return ResponseEntity.ok().body(taskUpdated);
     }
-    
 }

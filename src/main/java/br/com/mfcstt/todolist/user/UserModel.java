@@ -11,20 +11,22 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-@Data
-@Entity(name="tb_users")
+@Data // Anotação Lombok que gera automaticamente métodos getters, setters e outros métodos comuns.
+@Entity(name="tb_users") // Anotação JPA que indica que esta classe é uma entidade mapeada para uma tabela no banco de dados.
+
 public class UserModel {
-    
-    @Id
-    @GeneratedValue(generator = "UUID")
-    private UUID id;
 
-    //Definir username como atributo unico
-    @Column(unique = true)
-    private String username;
-    private String name;
-    private String password; 
+    @Id // Anotação JPA que indica que o campo é uma chave primária.
+    @GeneratedValue(generator = "UUID") // Gera automaticamente valores UUID para a chave primária.
+    private UUID id; // Identificador único do usuário.
 
-    @CreationTimestamp
-    private LocalDateTime createdAt;
+    @Column(unique = true) // Anotação JPA que indica que este campo deve ser único na tabela.
+    private String username; // Nome de usuário do usuário.
+
+    private String name; // Nome do usuário.
+
+    private String password; // Senha do usuário.
+
+    @CreationTimestamp // Anotação Hibernate que registra automaticamente a data e hora de criação.
+    private LocalDateTime createdAt; // Data e hora em que o usuário foi criado.
 }

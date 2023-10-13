@@ -11,39 +11,36 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-//modelagem de task
+@Data // Anotação Lombok que gera automaticamente métodos getters, setters e outros métodos comuns.
+@Entity(name = "tb_task") // Anotação JPA que indica que esta classe é uma entidade mapeada para uma tabela no banco de dados.
 
-@Data
-@Entity(name = "tb_task")
 public class TaskModel {
 
-    @Id
-    @GeneratedValue(generator = "UUID")
-    private UUID id;
-    private String description;
+    @Id // Anotação JPA que indica que o campo é uma chave primária.
+    @GeneratedValue(generator = "UUID") // Gera automaticamente valores UUID para a chave primária.
+    private UUID id; // Identificador único da tarefa.
 
-    @Column(length = 50)
-    private String title;
-    
-    private LocalDateTime startAt;
-    private LocalDateTime endAt;
-    private String priority;
+    private String description; // Descrição da tarefa.
 
-    private UUID idUser;
+    @Column(length = 50) // Anotação JPA que limita o tamanho da coluna "title" a 50 caracteres.
+    private String title; // Título da tarefa.
 
-    @CreationTimestamp
-    private LocalDateTime createdAt;
+    private LocalDateTime startAt; // Data e hora de início da tarefa.
 
+    private LocalDateTime endAt; // Data e hora de término da tarefa.
 
-    //Tratar erro caso seja digitado + de 50 caracteres no titulo
-    // Lançar uma nova exceção e tratar o erro
+    private String priority; // Prioridade da tarefa.
 
+    private UUID idUser; // Identificador do usuário ao qual a tarefa está associada.
 
-    public void setTitle(String title) throws Exception{
-        if(title.length() > 50){
+    @CreationTimestamp // Anotação Hibernate que registra automaticamente a data e hora de criação.
+    private LocalDateTime createdAt; // Data e hora em que a tarefa foi criada.
+
+    // Método para definir o título da tarefa com validação de tamanho máximo.
+    public void setTitle(String title) throws Exception {
+        if (title.length() > 50) {
             throw new Exception("O título deve conter no máximo 50 caracteres");
         }
         this.title = title;
     }
-    
 }
