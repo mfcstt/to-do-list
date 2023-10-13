@@ -44,6 +44,6 @@ public class UserController {
 
         //retornar quando o usuario for cadastrado
         var userCreated = this.userRepository.save(userModel);
-        return ResponseEntity.status(HttpStatus.CREATED).body(userCreated);
+        return ResponseEntity.status(HttpStatus.OK).body(userCreated);
     }
 }
