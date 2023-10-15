@@ -85,7 +85,7 @@ Dados necessários:
 - [Documentação springboot](https://spring.io/guides/gs/spring-boot/)
 
 
-## ✍️🏻 Autor
+## 💬 Autor
 
 - GitHub- [Mfcstt](https://github.com/mfcstt)
 - LinkedIn - [Maria Fernanda](https://www.linkedin.com/in/mfcstt)
