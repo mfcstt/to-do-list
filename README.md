@@ -86,8 +86,8 @@ Dados necessários:
 
 ## Autor
 
-- Website(GitHub) - [Felipe Dias](https://github.com/mfcstt)
-- LinkedIn - [Felipe Dias](https://www.linkedin.com/in/mfcstt)
+- GitHub- [Mfcstt](https://github.com/mfcstt)
+- LinkedIn - [Maria Fernanda](https://www.linkedin.com/in/mfcstt)
 
 
 
