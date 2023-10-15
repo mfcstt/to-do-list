@@ -68,11 +68,10 @@ Para acessar suas funcionalidades recomendo utilizar o API Dog ou Rest Clients s
 ```
 
 ## 🔗 Links
-
-
 - URL do deploy: [ToDoList](https://todolist-rocket-x1be.onrender.com)
-## 🖤 Tecnologias utilizadas
 
+
+## 🖤 Tecnologias utilizadas
 - Java 17
 - Maven
 - Spring Boot
@@ -91,7 +90,6 @@ Para acessar suas funcionalidades recomendo utilizar o API Dog ou Rest Clients s
 
 
 ## 💬 Autor
-
 - GitHub- [mfcstt](https://github.com/mfcstt)
 - LinkedIn - [Maria Fernanda](https://www.linkedin.com/in/mfcstt)
 
