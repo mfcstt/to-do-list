@@ -3,7 +3,7 @@
 
 ## Conteúdo
 
-- [Projeto](#projeto)
+[Projeto](#projeto)
     - [Aplicação](#Aplicação)
     - [Links](#links)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
