@@ -74,19 +74,25 @@ Para acessar suas funcionalidades recomendo utilizar o API Dog ou Rest Clients s
 ## 🖤 Tecnologias utilizadas
 
 - Java 17
-- Spring Boot
-- API Dog
 - Maven
-- H2
+- Spring Boot
+- Spring Initializr 
+- Spring Data JPA
+- spring-boot-devtools 
+- Banco de Dados H2
+- Project Lombok 
+- BCrypt
+- Render  
+
 
 ## 📑 Recursos úteis
 -  [Spring initializer](https://start.spring.io)
-- [Documentação springboot](https://spring.io/guides/gs/spring-boot/)
+- [Documentação Spring-Boot](https://spring.io/guides/gs/spring-boot/)
 
 
 ## 💬 Autor
 
-- GitHub- [Mfcstt](https://github.com/mfcstt)
+- GitHub- [mfcstt](https://github.com/mfcstt)
 - LinkedIn - [Maria Fernanda](https://www.linkedin.com/in/mfcstt)
 
 
