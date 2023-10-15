@@ -9,7 +9,9 @@
     - [A applicação](#a-aplicação)
     - [Links](#links)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
+- [Recursos úteis](#recursos-úteis)
 - [Autor](#autor)
+
 
 
 ## Visão Geral 
@@ -76,6 +78,16 @@ Dados necessários:
 - API Dog
 - Maven
 - H2
+
+### Recursos úteis
+-  [Spring initializer](https://start.spring.io)
+- [Documentação springboot](https://spring.io/guides/gs/spring-boot/)
+
+
+## Autor
+
+- Website(GitHub) - [Felipe Dias](https://github.com/mfcstt)
+- LinkedIn - [Felipe Dias](https://www.linkedin.com/in/mfcstt)
 
 
 
