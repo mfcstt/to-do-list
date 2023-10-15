@@ -3,8 +3,8 @@
 
 ## Conteúdo
 
-- [Visão geral](#visão-geral)
-    - [A applicação](#a-aplicação)
+- [Projeto](#projeto)
+    - [Aplicação](#Aplicação)
     - [Links](#links)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
 - [Recursos úteis](#recursos-úteis)
@@ -12,17 +12,18 @@
 
 
 
-### Visão Geral 
+### 💻 Projeto
 
-Essa é um API To-Do List desenvolvida em Java 17 e Spring Boot. Ele usa o API Dog para testar as funcionalidades e o Maven para gerenciamento de dependências. O banco de dados utilizado é o H2.
+API To-Do List desenvolvida em Java 17 e Spring Boot. Ele usa o API Dog para testar as funcionalidades e o Maven para gerenciamento de dependências. O banco de dados utilizado é o H2.
 
 
-#### A aplicação
+#### ☁️ Aplicação
 
 Clone este repositório e execute o seguinte comando: `mvn spring-boot:run`.
+
 Para acessar suas funcionalidades recomendo utilizar o API Dog ou Rest Clients similares 
 
-##### Endpoints
+##### 🖱 Endpoints
 ###### Cadastrar usuário -> POST - https://todolist-rocket-x1be.onrender.com/user
 ```json
 
@@ -67,11 +68,11 @@ Dados necessários:
 }
 ```
 
-### Links
+### 🔗 Links
 
 
 - URL do deploy: [ToDoList](https://todolist-rocket-x1be.onrender.com)
-## Tecnologias utilizadas
+## 🖤 Tecnologias utilizadas
 
 - Java 17
 - Spring Boot
@@ -79,12 +80,12 @@ Dados necessários:
 - Maven
 - H2
 
-### Recursos úteis
+### 📑 Recursos úteis
 -  [Spring initializer](https://start.spring.io)
 - [Documentação springboot](https://spring.io/guides/gs/spring-boot/)
 
 
-## Autor
+## ✍️🏻 Autor
 
 - GitHub- [Mfcstt](https://github.com/mfcstt)
 - LinkedIn - [Maria Fernanda](https://www.linkedin.com/in/mfcstt)
