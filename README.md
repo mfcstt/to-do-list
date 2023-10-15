@@ -1,7 +1,7 @@
 
 
 
-## conteúdo
+## Conteúdo
 
 - [Visão geral](#visão-geral)
     - [A applicação](#a-aplicação)
@@ -12,17 +12,17 @@
 
 
 
-## Visão Geral 
+### Visão Geral 
 
 Essa é um API To-Do List desenvolvida em Java 17 e Spring Boot. Ele usa o API Dog para testar as funcionalidades e o Maven para gerenciamento de dependências. O banco de dados utilizado é o H2.
 
 
-### A aplicação
+#### A aplicação
 
 Clone este repositório e execute o seguinte comando: `mvn spring-boot:run`.
 Para acessar suas funcionalidades recomendo utilizar o API Dog ou Rest Clients similares 
 
-#### Endpoints
+##### Endpoints
 ###### Cadastrar usuário -> POST - https://todolist-rocket-x1be.onrender.com/user
 ```json
 Dados necessários:
