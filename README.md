@@ -25,7 +25,9 @@ Para acessar suas funcionalidades recomendo utilizar o API Dog ou Rest Clients s
 ##### Endpoints
 ###### Cadastrar usuário -> POST - https://todolist-rocket-x1be.onrender.com/user
 ```json
+
 Dados necessários:
+
 {
 "name": "Maria Fernanda",
 "username":"mfcstt",
