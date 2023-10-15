@@ -5,14 +5,14 @@
 
 - [Projeto](#projeto)
     - [Aplicação](#Aplicação)
-    - [Links](#links)
-- [Tecnologias utilizadas](#tecnologias-utilizadas)
-- [Recursos úteis](#recursos-úteis)
-- [Autor](#autor)
+    - [Links](#Links)
+- [Tecnologias Utilizadas](#Tecnologias-Utilizadas)
+- [Recursos úteis](#Recursos-Úteis)
+- [Autor](#Autor)
 
 
 
-### 💻 projeto
+### 💻 Projeto
 
 API To-Do List desenvolvida em Java 17 e Spring Boot. Ele usa o API Dog para testar as funcionalidades e o Maven para gerenciamento de dependências. O banco de dados utilizado é o H2.
 
@@ -27,7 +27,6 @@ Para acessar suas funcionalidades recomendo utilizar o API Dog ou Rest Clients s
 ###### Cadastrar usuário -> POST - https://todolist-rocket-x1be.onrender.com/user
 ```json
 
-Dados necessários:
 
 {
 "name": "Maria Fernanda",
@@ -40,7 +39,7 @@ Dados necessários:
 - Para criar uma tarefa é necessário utilizar a autenticação de um usuário existente
 - Username e senha cadastrados
 ```json
-Dados necessários:
+
 {
 
   "description":"Realizar curso Java da Rocketseat",
@@ -60,7 +59,7 @@ Dados necessários:
 - Para atualizar uma tarefa é necessário inserir o ID da tarefa desejada e também utilizar a autenticação de um usuário existente
 - Username e senha cadastrados
 ```json
-Dados necessários:
+
 {
 
   "title": "Curso Java",
