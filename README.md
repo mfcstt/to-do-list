@@ -3,7 +3,7 @@
 
 ## Conteúdo
 
-[Projeto](#projeto)
+- [Projeto](#projeto)
     - [Aplicação](#Aplicação)
     - [Links](#links)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
@@ -12,7 +12,7 @@
 
 
 
-### 💻 Projeto
+### 💻 projeto
 
 API To-Do List desenvolvida em Java 17 e Spring Boot. Ele usa o API Dog para testar as funcionalidades e o Maven para gerenciamento de dependências. O banco de dados utilizado é o H2.
 
